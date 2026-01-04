@@ -1,2 +1,2 @@
 # GuitarChords
-Guitar Chords Website
+A simple guitar chords library
