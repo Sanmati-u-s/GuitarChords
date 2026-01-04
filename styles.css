@@ -1,0 +1,95 @@
+/* ===== Global ===== */
+html {
+    background-color: #f7eafc; /* soft lavender pink */
+    font-family: "Playpen Sans", cursive;
+    color: #5a355f;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* ===== Headings ===== */
+.chord {
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+h1 {
+    font-size: 2.3rem;
+    margin-bottom: 12px;
+    background-color: #f4c2d7; /* blush pink */
+    color: #5a2a4a;
+    padding: 16px;
+    border-radius: 18px;
+    box-shadow: 0 6px 14px rgba(180, 120, 170, 0.25);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 36px;
+    background-color: #e6d4f3; /* soft purple */
+    color: #5a355f;
+    padding: 10px 16px;
+    border-radius: 14px;
+    display: inline-block;
+}
+
+/* ===== Chord Container ===== */
+.chord-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    max-width: 500px;
+    margin: auto;
+    gap: 20px;
+}
+
+/* ===== Buttons ===== */
+.chord-btn {
+    padding: 14px 0;
+    font-size: 1.15rem;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 12px rgba(150, 100, 160, 0.25);
+}
+
+/* ===== Major Chords (Pink) ===== */
+.major {
+    background-color: #f9b5d0;   /* blush pink */
+    color: #6a2f4f;
+}
+
+/* ===== Minor Chords (Purple) ===== */
+.minor {
+    background-color: #c9b3f0;   /* soft purple */
+    color: #3f2a66;
+}
+
+/* ===== Hover Effect ===== */
+.chord-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(150, 100, 160, 0.35);
+    opacity: 0.95;
+}
+
+/* ===== Click Animation ===== */
+@keyframes press {
+    0% { transform: translateY(0) scale(1); box-shadow: 0 6px 12px rgba(150, 100, 160, 0.25); }
+    50% { transform: translateY(6px) scale(0.97); box-shadow: 0 4px 8px rgba(150, 100, 160, 0.18); }
+    100% { transform: translateY(0) scale(1); box-shadow: 0 6px 12px rgba(150, 100, 160, 0.25); }
+}
+
+.chord-btn.clicked {
+    animation: press 320ms ease;
+}
+
+/* Fallback for quick press without JS (native active state) */
+.chord-btn:active {
+    transform: translateY(6px) scale(0.97);
+    box-shadow: 0 4px 8px rgba(150, 100, 160, 0.18);
+}
